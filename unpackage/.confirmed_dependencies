@@ -1,0 +1,25 @@
+{
+	"index.html": {
+		"resources": [
+			"img/tabbar_profile@3x.png",
+			"js/js.js",
+			"img/tabbar_message_center@3x.png",
+			"img/timeline_icon_comment@3x.png",
+			"img/navigationbar_icon_radar@3x.png",
+			"img/nice.png",
+			"img/navigationbar_friendattention@3x.png",
+			"img/more_icon_retweet@3x.png",
+			"css/less.css",
+			"img/tabbar_compose_background_icon_add@3x.png",
+			"img/popover_icon_radar@3x.png",
+			"img/avatar_vip_golden@3x.png",
+			"img/tabbar_home@3x.png",
+			"img/touxiang.jpg",
+			"img/popover_icon_qrcode@3x.png",
+			"img/tabbar_discover@3x.png",
+			"img/message_toolbar_popover_arrow@3x.png",
+			"img/popover_icon_didi@3x.png",
+			"js/index.js"
+		]
+	}
+}

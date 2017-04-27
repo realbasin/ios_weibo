@@ -1,0 +1,199 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.clear{
+	zoom: 1;
+}
+.clear{
+	content: '';
+	display: inline-block;
+	clear: both;
+}
+.html{
+	font-size:12px ;
+}
+.le{
+	float: left;
+}
+.rig{
+	float: right;
+}
+.top .le {
+  margin-left: 3px;
+  margin-top: 10px;
+}
+.top .le_2{
+  margin-top:5px;
+  float: right;
+  width:8%;
+  /*/*margin-right: 3px;
+  margin-top: 7px;*/*/
+}
+.top .icon {
+  width: 150px;
+  height: 30px;
+  background: transparent;
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: 30%;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+/*.top div:nth-of-type(1),.top div:nth-of-type(1),.top div:nth-of-type(1){
+	width: 33%;
+}*/
+.content,.content_set{
+	padding-top: 44px;
+}
+.ss{
+	height: 20px;
+	padding-top:10px;
+	padding-left:10px;
+	color:gray;
+	font-size: 12px;
+	background: #EDEDED;
+}
+.wei_atten{
+	height: 63px;
+	
+	border: 0.1px solid #EDEDED;
+}
+.wei_img,.wei_con,.wei_a{
+	/*width:30%;*/
+	height: 50px;
+	padding: 5px 0px 0px 3px;
+}
+.wei_img{
+	width: 13%;
+}
+.cirle{
+	border-radius: 50%;
+}
+.wei_con{
+	width: 70%;
+}
+
+
+.wei_img img,.wei_a img{
+	margin-top:7px;
+	margin-left:10px;
+	width: 40px;
+	height: 40px;
+	border-radius:50% ;
+}
+.wei_a img{
+	display: inline-block;
+	float: right;
+}
+.new_con,.wie_id{
+	font-size: 15px;
+	margin-top:5px;
+	margin-left:5px;
+	color:orange;
+	width: 100%;
+	height: 18px;
+	display: inline-block;
+	overflow: hidden;
+}
+.new_con{
+	color:gray;
+	font-size:12px;
+}
+.weibo_cont{
+	padding-left:10px ;
+}
+.wei_fun span{
+	display: inline-block;
+	width: 33%;
+	text-align: center;
+}
+.wei_fun img{
+	height: 19px;
+	width: 19px;
+	vertical-align: middle;
+}
+.wei_fun b{
+	font-weight: normal;
+	vertical-align: middle;
+}
+.user_scrname,.user_date,.user_weibo,.wei_fun{
+	margin:3px 0px 3px 0px ;
+}
+.my_cont{
+	border: 1px solid gainsboro;
+	padding: 10px 0px 0px 10px;
+}
+.my_userID{
+	padding-left:12px ;
+}
+
+.com_wei .c{
+	width: 30%;
+	display: inline-block;
+	margin: 5px;
+	height: 120px;
+	
+}
+
+
+
+
+
+
+
+/*prase*/
+
+
+
+/*attend_page*/
+.user_message{
+	text-align: center;
+	background: url(../img/timg.jpg)no-repeat;
+}
+.user_message img{
+	border-radius:50% ;
+	height: 60px;
+	width: 60px;
+}
+
+
+/*my_wiebo*/
+.my_img,.my_img img{
+	width: 50px;
+	height: 50px;
+	border-radius:50% ;
+}
+
+
+/*设置信息*/
+
+.content_set div{
+	width:100%;
+	overflow: hidden;
+	/*text-align: center;*/
+	height: 40px;
+	font-size: 15px;
+	line-height: 40px;
+	padding-left: 6px;
+	border-bottom:1px solid #EDEDED;	
+}
+.content_set div:nth-of-type(1){
+	border-top:15px solid #EDEDED ;
+}
+.content_set div:nth-of-type(2),.content_set div:nth-of-type(6),.content_set div:nth-of-type(8),.content_set div:nth-of-type(9){
+	border-bottom:15px solid #EDEDED ;
+}
+.content_set div:nth-of-type(10){
+	position: absolute;
+	text-align: center;
+	color: red;
+	bottom: 0px;
+	width: 100%;
+}
+

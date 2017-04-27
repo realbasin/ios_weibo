@@ -1,0 +1,11 @@
+把以下输入值就好了！！
+获取方法请到open.weibo.com
+因为我是在ios上测试的，所以安卓客户端可能会有瑕疵
+
+
+js/my_weibo.js下的23行的uid；
+js/js.js  下的第1行的ACCESS_TOKEN；
+attend.html 下的 64行的uid；
+bean.html下的33行的uid；
+my.html下的217行的uid；
+index.html下的184行的uid；

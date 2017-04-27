@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/callme.css"/>
+    <script src="js/js.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <title></title>
+</head>
+<body>
+	<div id="callme">
+		<div id="callme_header">
+			<span class="nav" ><span onclick="back()"></span></span>
+			<span class="nav"><span>所有微博</span> <img class="down" src="img/navigationbar_arrow_down@2x.png" alt="" /></span>
+			<span class="nav"><span onclick="setSkip()">设置</span></span>
+			<div id="menus">
+				<img  src="img/uls_icon_questions_cpm_above@2x.png" alt="" />
+				<div class="item">所有微博</div>
+				<div class="item">关注人的微博</div>
+				<div class="item">原创微博</div>
+				<p>@我的评论</p>
+				<div class="item">所有评论</div>
+				<div class="item">关注人的评论</div>
+			</div>
+		</div>
+		<div class="callme_main">
+		</div>
+	</div>
+	
+    <script type="text/javascript">
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			getDataByUrl("https://api.weibo.com/2/statuses/mentions.json",{},successFN,errorFN);
+   		});
+   		
+   		
+   		var nav = document.getElementsByClassName("nav")[1];
+   		var span = nav.getElementsByTagName("span")[0];
+   		var item = document.getElementsByClassName("item");
+   		var down = document.getElementsByClassName("down")[0];
+   		
+   		function back(){
+			plus.webview.close("callme.html","pop-out",200)
+		}
+   		
+   		function setSkip(){
+   			var m_url = "setWeibo.html";
+   			var id = m_url;
+   			plus.webview.open(m_url, id, {}, "pop-in",200, function(){});
+   		}
+		nav.addEventListener("click",function(){
+			down.src = "img/navigationbar_arrow_up@2x.png";
+			getMenus();
+			judge();
+			event.stopPropagation();
+		},false);
+		
+		$(document).click(function(){
+//			if(event.path[1] === nav){return;};
+			if($('#menus').css('display')=='block'){
+				$('#menus').hide();
+				down.src = "img/navigationbar_arrow_down@2x.png";
+			}
+		})
+
+		function judge(){
+			$('#menus').toggle();
+		}
+		
+		function getMenus(){
+			for(var i=0; i<item.length;i++){
+				item[i].index=i;
+				item[i].addEventListener("click",function(){
+					for(var j=0;j<item.length;j++){
+						item[j].className=" item ";
+						item[j].style.backgroundColor = "#333";
+						item[j].style.color='white';
+					}
+					item[this.index].style.color = "orange";
+					item[this.index].style.backgroundColor = "#666";
+					span.innerText=item[this.index].innerText;
+					$('#menus').hide();
+					down.src = "img/navigationbar_arrow_down@2x.png";
+				},false)
+			}
+		}
+   		
+   		function successFN(obj){
+   			for(var i=0;i<obj.statuses.length;i++){
+   				var callmeMain = document.getElementsByClassName("callme_main")[0];
+				var callmeWeibo = document.createElement("div");
+				callmeWeibo.className = "callme_weibo";
+				var user = document.createElement("div");
+				user.className="user";
+				var downImg = document.createElement("img");
+				downImg.className="downimg";
+				downImg.src = "img/compose_gif_magnifier_corner@2x.png";
+				var userLeft= document.createElement("div");
+				var userRight= document.createElement("div");
+				var userImg = document.createElement("img");
+				userImg.className= "userimg";
+				userImg.src= obj.statuses[i].user.profile_image_url;
+				var userName = document.createElement("div");
+				userName.className = "username";
+				userName.innerText = obj.statuses[i].user.name;
+				var time = document.createElement("div");
+				time.className = "time";
+				var times = document.createElement("span");
+				times.className= "times";
+				var timer = obj.statuses[i].created_at;
+				var t = new Date(timer);
+				var tt = getDateDiff(t);
+				times.innerText = tt;
+				var froms = document.createElement("span");
+				froms.innerText = "来自";
+				var facility =document.createElement("span");
+				facility.className= "facility";
+				facility.innerHTML = obj.statuses[i].source;
+				var weiboContent = document.createElement("div");
+				weiboContent.className= "weibo_content";
+				weiboContent.innerText = obj.statuses[i].text;
+				var weiboBottom = document.createElement("div");
+				weiboBottom.className="weibo_bottom";
+				var bottomNav1 = document.createElement("div");
+				bottomNav1.className="bottom_nav";
+				var bottomNav2 = document.createElement("div");
+				bottomNav2.className="bottom_nav";
+				var bottomNav3 = document.createElement("div");
+				bottomNav3.className="bottom_nav";
+				var div1 = document.createElement("div");
+				var div2 = document.createElement("div");
+				var div3 = document.createElement("div");
+				var img1 = document.createElement("img");
+				img1.src = "img/artical_detail_icon_repost@2x.png";
+				var img2 = document.createElement("img");
+				img2.src = "img/artical_detail_icon_comment@2x.png";
+				var img3 = document.createElement("img");
+				img3.src = "img/artical_detail_icon_like@2x.png";
+				var transpond = document.createElement("span");
+				if(obj.statuses[i].reposts_count > 0){
+					review.innerText = obj.statuses[i].reposts_count;
+				}else{
+					transpond.innerText = "转发";
+				}
+				var review = document.createElement("span");
+				if(obj.statuses[i].comments_count > 0){
+					review.innerText = obj.statuses[i].comments_count;
+				}else{
+					review.innerText = "评论";
+				}
+				var commend = document.createElement("span");
+				if(obj.statuses[i].attitudes_count > 0){
+					review.innerText = obj.statuses[i].attitudes_count;
+				}else{
+					commend.innerText = "赞";
+				}
+				time.appendChild(times);
+				time.appendChild(froms);
+				time.appendChild(facility);
+				userRight.appendChild(userName);
+				userRight.appendChild(time);
+				userLeft.appendChild(userImg);
+				user.appendChild(userLeft);
+				user.appendChild(userRight);
+				div1.appendChild(img1);
+				div2.appendChild(img2);
+				div3.appendChild(img3);
+				div3.appendChild(commend);
+				div2.appendChild(review);
+				div1.appendChild(transpond);
+				bottomNav1.appendChild(div1);
+				bottomNav2.appendChild(div2);
+				bottomNav3.appendChild(div3);
+				weiboBottom.appendChild(bottomNav1);
+				weiboBottom.appendChild(bottomNav2);
+				weiboBottom.appendChild(bottomNav3);
+				callmeWeibo.appendChild(user);
+				callmeWeibo.appendChild(weiboContent);
+				callmeWeibo.appendChild(weiboBottom);
+				callmeWeibo.appendChild(downImg);
+				callmeMain.appendChild(callmeWeibo);
+				var callme_weibo1 = document.getElementsByClassName("callme_weibo")[0];
+   				callme_weibo1.style.marginTop=52+"px";
+   			}
+   		}
+   		function errorFN(error){
+				console.log(error);
+		}
+
+   		function getDateDiff(dateTimeStamp){
+			var minute = 1000 * 60;
+			var hour = minute * 60;
+			var day = hour * 24;
+			var halfamonth = day * 15;
+			var month = day * 30;
+			var now = new Date().getTime();
+			var diffValue = now - dateTimeStamp;
+			if(diffValue < 0){return;}
+			var monthC =diffValue/month;
+			var weekC =diffValue/(7*day);
+			var dayC =diffValue/day;
+			var hourC =diffValue/hour;
+			var minC =diffValue/minute;
+			if(monthC>=1){
+				result="" + parseInt(monthC) + "月前";
+			}
+			else if(weekC>=1){
+				result="" + parseInt(weekC) + "周前";
+			}
+			else if(dayC>=1){
+				result=""+ parseInt(dayC) +"天前";
+			}
+			else if(hourC>=1){
+				result=""+ parseInt(hourC) +"小时前";
+			}
+			else if(minC>=1){
+				result=""+ parseInt(minC) +"分钟前";
+			}else
+			result="刚刚";
+			return result;
+		}
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<script src="js/js.js"></script>
+		<script src="js/skip.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/attend.css"/>
+	</head>
+	<body>
+		<div id="wrapb">
+			<div class="top">
+				<div class="le"  onclick="back()" >＜我</div>
+				<div class="icon" >粉丝影响力</div>
+				<img  onclick='back_1()' src="img/navigationbar_more@3x.png" class="le_2"/>
+			</div>
+			<div class="content">
+				<div class="ss">全部粉丝</div>
+				
+			</div>
+
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   				
+   			function getBeanMessage(){
+   				var m_url = "https://api.weibo.com/2/friendships/followers.json";
+   				getDataByUrl(m_url,{uid:'2264734132',count:100},suc,err);
+   			
+   			}
+   			getBeanMessage();
+   				
+   		});
+   			
+   			function suc(obj){
+   				var data = obj.users;
+   				for(var i in data){
+   					var content =document.querySelector('.content');//添加的内容主体
+   					var div1 = document.createElement('div');
+   					var div2 = document.createElement('div');//微博图片;
+   					var img1 = document.createElement('img');//图片
+   					var wei_con = document.createElement('div');//内容主体
+   					var span1 = document.createElement('span');
+   					var span2 = document.createElement('span');
+   					var div3 = document.createElement('div');
+   					var img2 = document.createElement('img');
+   					img2.src="img/attend.png";
+   					div3.appendChild(img2);
+   					div1.className="wei_atten";
+   					div2.className='wei_img le';
+   					wei_con.className='wei_con le';
+   					div3.className='wei_a le';
+   					span1.className='wie_id';
+   					span2.className='new_con';
+   					
+   					img1.src=data[i].profile_image_url;
+// 					console.log(data[i].profile_image_url)
+   					div2.appendChild(img1);
+   					div1.appendChild(div2);//图片
+   					span1.innerText=data[i].screen_name;
+// 					console.log(data[i].user.name)
+
+					
+					function times(){
+						var data = new Date();
+						var now = data.getTime();
+						var data2 = new Date(obj.users[i].created_at);
+						var create_time = data2.getTime();
+						var time = now-create_time;//两者之间的时间差
+						var year = data2.getFullYear();//年
+						var month = data2.getMonth()+1;//月
+						var day = data2.getDate();//日
+						var hour = data2.getHours();//小时
+						var minuter = data2.getMinutes();//分钟
+						var days =time/(1000*60*60*24);
+						var hours =days*24 ;
+						var minute =hours*60;
+						var sec = minute*60;
+						if(days<1){
+							if(hours>1){
+								span2.innerText =parseInt(hours)  + "小时前";
+							}else{
+								if(minute>1){
+									span2.innerText =parseInt(minute)  + "分钟前";
+								}else{
+									span2.innerText =parseInt(sec) + "秒前";
+								}
+							}
+						}	
+						else{
+							if(days>1&&days<5){
+								span2.innerText =parseInt(days) + "天前";
+							}else{
+								if(days>5&&days<20){
+									span2.innerText = month +"-"+ day +" "+ hour +":"+ minuter;
+								}
+								else{
+									span2.innerText = year +"-"+ month +"-"+ day +" "+ hour +":"+ minuter;
+								}
+							}
+						};
+					}
+					times();
+
+
+
+
+
+// 					span2.innerText=data[i].created_at;
+   					wei_con.appendChild(span1);
+   					wei_con.appendChild(span2);
+// 					div3.innerText='123';
+   					div1.appendChild(wei_con);//内容
+   					div1.appendChild(div3);//确认
+   					content.appendChild(div1);
+   					
+   					
+   				}
+   				
+   			}
+   			function err(error){
+   				console.log(error);
+   			}
+   			
+   			function back(){
+				plus.webview.close("bean.html","pop-out",500);
+			}
+   			
+   			function back_1(){
+				var actionbuttons=[{title:"返回首页"},{title:"刷新"}];
+				var actionstyle={cancel:"取消",buttons:actionbuttons};
+				plus.nativeUI.actionSheet(actionstyle, function(e){
+					console.log( "User pressed: "+e.index );
+					if(e.index==0){
+						
+					}
+					else if(e.index==1){
+						save(path);
+					}
+				});
+   			}
+		</script>
+	</body>
+</html>

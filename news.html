@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/news.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bottom_nav.css"/>
+    <link rel="stylesheet" type="text/css" href="css/r_weather.css"/>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+</head>
+<body>
+	<div id="news">
+		<div id="news_header">
+			<span class="nav"><span>发现群</span></span>
+			<span class="nav"><span>消息</span></span>
+		</div>
+		<div id="news_seek">
+			<div class="news_search">
+				<input type="text" placeholder=" 🔍 搜索" />
+			</div>
+		</div>
+		<div id="news_main">
+			<div class="news_content">
+				<div class="news_icon">
+					<img class="icon_1" src="img/messagescenter_at@3x.png"/>
+				</div>
+				<div class="my" onclick="callmeSkip()">
+					<span>@我的</span>
+					<span>&gt;</span>
+				</div>
+			</div>
+			<div class="news_content">
+				<div class="news_icon">
+					<img class="icon_1" src="img/messagescenter_comments@3x.png"/>
+				</div>
+				<div class="my" onclick="commentsSkip()">
+					<span>评论</span>
+					<span>&gt;</span>
+				</div>
+			</div>
+			<div class="news_content">
+				<div class="news_icon">
+					<img class="icon_1" src="img/messagescenter_good@3x.png"/>
+				</div>
+				<div class="my" onclick="commendSkip()">
+					<span>赞</span>
+					<span>&gt;</span>
+				</div>
+			</div>
+			<!--<div class="news_content">
+				<div class="news_icon">
+					<img class="headportrait" src="../img/messagescenter_good@3x.png"/>
+				</div>
+				<div class="content_title">
+					<div class="username">全景深圳</div>
+					<span class="time">14:56</span>
+					<div class="chattingr">你好</div>
+				</div>
+			</div>-->
+		</div>
+		<div class="bottom">
+			<img id="home_page" src="img/tabbar_home@3x.png"/>
+			<p class="home_page">首页</p>
+			<img id="news_page" src="img/tabbar_message_center_selected@3x.png"/>
+			<p class="news">消息</p>
+			<img id="find" src="img/tabbar_discover@3x.png"/>
+			<p class="find">发现</p>
+			<img id="me" src="img/tabbar_profile@3x.png"/>
+			<p class="me">我</p>
+			<div class="add"><img src="img/tabbar_compose_background_icon_add@3x.png" alt="" id="add" /></div>
+		</div>
+	</div>
+	<div id="maximum">
+		<div id="head">
+			<div id="left">
+				<span>07</span>
+				<span>星期五</span>
+				<span>04/2017</span>
+				<span>深圳市</span>
+			</div>
+			<div id="right">
+				<img src="img/more_weibo@3x.png"/>
+			</div>
+		</div>
+		
+		<div class="swiper-container" id="swi">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" id="content1">
+					<div class="icon">
+						<img src="img/tabbar_compose_idea_neo@3x.png"/><br />
+						<span>文字</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_camera@3x.png"/><br />
+						<span>拍摄</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_voice@3x.png"/><br />
+						<span>相册</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_live_neo@3x.png"/><br />
+						<span>直播</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_slideshow_neo@3x.png"/><br />
+						<span>光影秀</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_article_neo@3x.png"/><br />
+						<span>头条文章</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_location_neo@3x.png"/><br />
+						<span>签到</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_comment_neo@3x.png"/><br />
+						<span>点评</span>
+					</div><br />
+				</div>
+				<div class="swiper-slide" id="content2">
+					<div class="icon">
+						<img src="img/tabbar_compose_topic_neo@3x.png"/><br />
+						<span>话题</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_envelope@2x.png"/><br />
+						<span>红包</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_friends_neo@3x.png"/><br />
+						<span>好友圈</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_music_neo@3x.png"/><br />
+						<span>音乐</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_shopping_neo@3x.png"/><br />
+						<span>商品</span>
+					</div>
+					<div class="icon">
+						<img src="img/tabbar_compose_miaopai_neo@3x.png"/><br />
+						<span>秒拍</span>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div id="bottom_1">
+			<img id="back" src="img/tabbar_compose_icon_cancel@2x.png"/>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/bottom_nav.js"></script>
+	<script type="text/javascript" src="js/r_weather.js"></script> 
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script src="js/tab.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   		});
+		
+		var xiaoxi = document.getElementsByClassName("xiaoxi")[0];
+		var chat = document.getElementsByClassName("chat")[0];
+		var flg = false;
+		
+
+		
+		function callmeSkip(){
+   			var m_url = "callme.html";
+   			var id = m_url;
+   			plus.webview.open(m_url, id, {}, "pop-in",200, function(){});
+   		}
+		function commentsSkip(){
+   			var m_url = "comments.html";
+   			var id = m_url;
+   			plus.webview.open(m_url, id, {}, "pop-in",200, function(){});
+   		}
+		function commendSkip(){
+   			var m_url = "commend.html";
+   			var id = m_url;
+   			plus.webview.open(m_url, id, {}, "pop-in",200, function(){});
+   		}
+	</script>
+</body>
+</html>

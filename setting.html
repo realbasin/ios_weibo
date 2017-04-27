@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<title></title>
+		<script src="js/js.js"></script>
+		<script src="js/skip.js"></script>
+		<link rel="stylesheet" href="css/attend.css" />
+		
+	</head>
+	<body>
+		<div id="wrapo">
+			<div class="top">
+				<div class="le"  onclick="back()" >＜我</div>
+				<div class="icon" >设置</div>
+			</div>
+			<div class="content_set">
+				<div>帐号管理</div>
+				<div>帐号与安全</div>
+				<div>消息设置</div>
+				<div>屏蔽设置</div>
+				<div>隐私设置</div>
+				<div>通用设置</div>
+				<div>客服中心</div>
+				<div>关于微博</div>
+				<div>清除缓存</div>
+				<div class="exit">退出微博</div>
+			</div>
+		</div>
+		<script>
+			var exit = document.querySelector('.exit')
+			window.onscroll = function(){
+				var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+				exit.style.bottom = -scrollTop+'px';
+			}
+			function back(){
+				plus.webview.close("setting.html","pop-out",200);
+			}
+		</script>
+	</body>
+</html>

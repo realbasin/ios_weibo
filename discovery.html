@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/wb_discovery.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/r_weather.css"/>
+		<title></title>
+		<script type="text/javascript">
+//			document.addEventListener('plusready', function() {
+//				//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+//
+//			});
+		</script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="c_top">
+				<div id="search">
+					<div class="search_bg">
+						<i></i>
+						<input type="text" placeholder="大家正在搜：bala" />
+					</div>
+				</div>
+				<div class="swiper-container" id="swiper1">
+					<div class="swiper-wrapper" >
+						<div class="swiper-slide"><img class="fill_img" src="http://s2.mogucdn.com/p2/170216/72539503_7l5b343ha354h4c15ldfj8df2h66e_750x360.jpg" alt=""></div>
+						<div class="swiper-slide"><img class="fill_img" src="http://s2.mogucdn.com/p2/170216/140479629_2l4fel04jg9ec271ciblca96g3fjh_778x440.jpg_900x9999.v1c7E.70.webp" alt=""></div>
+						<div class="swiper-slide"><img class="fill_img" src="http://s2.mogucdn.com/p2/170216/105897215_5kf2ea7cf2h4l3182j29c5519j6b5_750x360.jpg" alt=""></div>
+						<div class="swiper-slide"><img class="fill_img" src="http://s11.mogucdn.com/p2/170217/105897215_6ha2a2b8ia3giae75balibgf54f42_750x360.jpg" alt=""></div>
+						<div class="swiper-slide"><img class="fill_img" src="http://s18.mogucdn.com/p2/170217/upload_40f2772j46aj47iij80l9ig8cl0kd_750x360.jpg" alt=""></div>
+						<div class="swiper-slide"><img class="fill_img" src="http://s2.mogucdn.com/p2/170217/105897215_1c42f7k4592979199dh36l8bd98g5_750x360.jpg" alt=""></div>
+					</div>
+					<div class="swiper-scrollbar"></div>
+				</div>
+				<div id="more">
+					<div id="m_line1">
+						<li>
+							<img src="img/zhaoren.png" />
+							<span>找人</span>
+						</li>
+						<li>
+							<img src="img/shenzheng.png" />
+							<span>深圳</span>
+						</li>
+						<li>
+							<img src="img/youxi.png" />
+							<span>游戏</span>
+						</li>
+						<li>
+							<img src="img/zhibo.png" />
+							<span>直播</span>
+						</li>
+						<li>
+							<img src="img/dianying.png" />
+							<span>电影</span>
+						</li>
+					</div>
+					<div id="m_line2">
+						<li>
+							<img src="img/duobao.png" />
+							<span>夺宝</span>
+						</li>
+						<li>
+							<img src="img/youwu.png" />
+							<span>尤物</span>
+						</li>
+						<li>
+							<img src="img/nba.png" />
+							<span>NBA</span>
+						</li>
+						<li >
+							<img src="img/gupiao.png" />
+							<span>股票</span>
+						</li>
+						<li id='clickMore'>
+							<img id="evenMore" src="img/gengduo.png" />
+							<span>更多</span>
+						</li>
+					</div>
+					<div id="m_line3" style="display: none;">
+						<li>
+							<img src="img/hongren.png" />
+							<span>红人淘</span>
+						</li>
+						<li>
+							<img src="img/tabbar_compose_music_neo@3x.png" />
+							<span>音乐</span>
+						</li>
+						<li>
+							<img src="img/qiche.png" />
+							<span>汽车</span>
+						</li>
+						<li>
+							<img src="img/meishi.png" />
+							<span>美食</span>
+						</li>
+						<li>
+							<img src="img/meishi.png" />
+							<span>美食</span>
+						</li>
+					</div>
+				</div>
+				<div id="hot">
+					<div id="h_line1">
+						<li>
+							<i></i>
+							<span>#好好先森#</span>
+						</li>
+						<li>
+							<i></i>
+							<span>#微信关闭IOS端#</span>
+						</li>
+					</div>
+					<div id="h_line2">
+						<li>
+							<i></i>
+							<span>#百万粉丝追神车#</span>
+						</li>
+						<li>
+							<i></i>
+							<span>#热门#</span>
+						</li>
+					</div>
+				</div>
+			</div>
+			<div id="c_bot">
+				<div id="tab">
+					<li>
+						<span>热门</span><br />
+						<i></i>
+					</li>
+					<li>
+						<span>榜单</span><br />
+						<i></i>
+					</li>
+					<li>
+						<span>视频</span><br />
+						<i></i>
+					</li>
+					<li>
+						<span>头条</span><br />
+						<i></i>
+					</li>
+				</div>                                                               
+				<div class="swiper-container" id="swiper2">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide bgc">
+							<div class="weibo" id='wb_hot'>
+								<!--<div class="img_text">
+									<div class="top_1">
+										<img class="tx" src="img/touxiang.jpg"/>
+										<img class="renzheng" src="img/avatar_vip_golden@3x.png"/>
+										<p class="name">周玥</p>
+										<p class="time">12分钟前</p>
+										<p class="source">来自</p>
+										<span class="concern_btn">+关注</span>
+										<img class="down" src="img/livescreen_popup_close@3x.png"/>
+									</div>
+									<div class="top_2">今天下午你们在干嘛呢？ ♫我正在收听这首单曲:周玥-拥抱♫http://t.cn/R6mNqU2</div>
+									<div class="top_3">
+										<ul>
+											<li class="two"><img src="img/touxiang.jpg"/></li>
+											<li class="two"><img src="img/touxiang.jpg"/></li>
+											<li class="two"><img src="img/touxiang.jpg"/></li>
+											<li class="two"><img src="img/touxiang.jpg"/></li>
+											<li class="two"><img src="img/touxiang.jpg"/></li>
+										</ul>
+									</div>-->
+									<!--<div class="top_5">
+										<div class="top_51">
+											<a class="two_name" href="">@aaaaa</a>:今天下午你们在干嘛呢？ ♫我正在收听这首单曲:周玥-拥抱♫http://t.cn/R6mNqU2
+										</div>
+										<ul>
+											<li class="two_1"><img src="img/touxiang.jpg"/></li>
+											<li class="two_1"><img src="img/touxiang.jpg"/></li>
+											<li class="two_1"><img src="img/touxiang.jpg"/></li>
+										</ul>
+										
+									</div>-->
+									<!--<div class="top_4">
+										<div class="forward"><img src="img/more_icon_retweet@3x.png"/>转发</div>
+										<div class="comment"><img src="img/timeline_icon_comment@3x.png"/>评论</div>
+										<div class="nice"><img src="img/nice.png"/>赞</div>
+									</div>-->
+								<!--</div>-->
+							</div>
+						</div>
+						<div class="swiper-slide bgc">
+							<div class="weibo" id='wb_list'>
+								<div class="img_text">
+									<div class="top_1">
+										<img class="tx" src="img/touxiang.jpg"/>
+										<img class="renzheng" src="img/avatar_vip_golden@3x.png"/>
+										<p class="name">周玥</p>
+										<p class="time">12分钟前</p>
+										<p class="source">来自</p>
+										<span class="concern_btn">+关注</span>
+										<img class="down" src="img/livescreen_popup_close@3x.png"/>
+									</div>
+									<div class="top_2">今天下午你们在干嘛呢？ ♫我正在收听这首单曲:周玥-拥抱♫http://t.cn/R6mNqU2</div>
+									<div class="top_4">
+										<div class="forward"><img src="img/more_icon_retweet@3x.png"/>转发</div>
+										<div class="comment"><img src="img/timeline_icon_comment@3x.png"/>评论</div>
+										<div class="nice"><img src="img/nice.png"/>赞</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide bgc">
+							<div class="weibo" id='wb_video'>
+								<div class="img_text">
+									<div class="top_1">
+										<img class="tx" src="img/touxiang.jpg"/>
+										<img class="renzheng" src="img/avatar_vip_golden@3x.png"/>
+										<p class="name">周玥</p>
+										<p class="time">12分钟前</p>
+										<p class="source">来自</p>
+										<span class="concern_btn">+关注</span>
+										<img class="down" src="img/livescreen_popup_close@3x.png"/>
+									</div>
+									<div class="top_2">今天下午你们在干嘛呢？ ♫我正在收听这首单曲:周玥-拥抱♫http://t.cn/R6mNqU2</div>
+									<div class="top_4">
+										<div class="forward"><img src="img/more_icon_retweet@3x.png"/>转发</div>
+										<div class="comment"><img src="img/timeline_icon_comment@3x.png"/>评论</div>
+										<div class="nice"><img src="img/nice.png"/>赞</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide bgc">
+							<div class="weibo" id='wb_headline'>
+								<div class="img_text">
+									<div class="top_1">
+										<img class="tx" src="img/touxiang.jpg"/>
+										<img class="renzheng" src="img/avatar_vip_golden@3x.png"/>
+										<p class="name">周玥</p>
+										<p class="time">12分钟前</p>
+										<p class="source">来自</p>
+										<span class="concern_btn">+关注</span>
+										<img class="down" src="img/livescreen_popup_close@3x.png"/>
+									</div>
+									<div class="top_2">今天下午你们在干嘛呢？ ♫我正在收听这首单曲:周玥-拥抱♫http://t.cn/R6mNqU2</div>
+									<div class="top_4">
+										<div class="forward"><img src="img/more_icon_retweet@3x.png"/>转发</div>
+										<div class="comment"><img src="img/timeline_icon_comment@3x.png"/>评论</div>
+										<div class="nice"><img src="img/nice.png"/>赞</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<img id="home_page" src="img/tabbar_home@3x.png"/>
+				<p class="home_page">首页</p>
+				<img id="news_page" src="img/tabbar_message_center@3x.png"/>
+				<p class="news">消息</p>
+				<img id="find" src="img/tabbar_discover_highlighted@3x.png"/>
+				<p class="find">发现</p>
+				<img id="me" src="img/tabbar_profile@3x.png"/>
+				<p class="me">我</p>
+				<div class="add"><img src="img/tabbar_compose_background_icon_add@3x.png" alt="" id="add" /></div>
+			</div>
+		</div>
+		<div id="maximum">
+			<div id="head">
+				<div id="left">
+					<span>07</span>
+					<span>星期五</span>
+					<span>04/2017</span>
+					<span>深圳市</span>
+				</div>
+				<div id="right">
+					<img src="img/more_weibo@3x.png"/>
+				</div>
+			</div>
+			
+			<div class="swiper-container" id="swi">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" id="content1">
+						<div class="icon">
+							<img src="img/tabbar_compose_idea_neo@3x.png"/><br />
+							<span>文字</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_camera@3x.png"/><br />
+							<span>拍摄</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_voice@3x.png"/><br />
+							<span>相册</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_live_neo@3x.png"/><br />
+							<span>直播</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_slideshow_neo@3x.png"/><br />
+							<span>光影秀</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_article_neo@3x.png"/><br />
+							<span>头条文章</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_location_neo@3x.png"/><br />
+							<span>签到</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_comment_neo@3x.png"/><br />
+							<span>点评</span>
+						</div><br />
+					</div>
+					<div class="swiper-slide" id="content2">
+						<div class="icon">
+							<img src="img/tabbar_compose_topic_neo@3x.png"/><br />
+							<span>话题</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_envelope@2x.png"/><br />
+							<span>红包</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_friends_neo@3x.png"/><br />
+							<span>好友圈</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_music_neo@3x.png"/><br />
+							<span>音乐</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_shopping_neo@3x.png"/><br />
+							<span>商品</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_miaopai_neo@3x.png"/><br />
+							<span>秒拍</span>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			
+			
+			<div id="bottom_1">
+				<img id="back" src="img/tabbar_compose_icon_cancel@2x.png"/>
+			</div>
+		</div>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/discovery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/js.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script src="js/r_weather.js"></script>
+		<script src="js/tab.js"></script>
+		<script type="text/javascript">
+			var mySwiper = new Swiper('#swiper1', {
+				loop: true,
+				//	    pagination: '.swiper-pagination',
+				scrollbar: '.swiper-scrollbar',
+				autoplay: 2500,
+				autoplayDisableOnInteraction: false
+			});
+			var mySwiper2 = new Swiper('#swiper2', {
+				//	    pagination: '.swiper-pagination',
+				watchSlidesProgress : true,
+				watchSlidesVisibility : true,
+				onSliderMove: function(swiper, event){
+					var four_tab = tab.getElementsByTagName('li');
+				    
+				    for(var i = 0; i < four_tab.length; i++) {
+						four_tab[i].index=i;
+						for(var i = 0; i < four_tab.length; i++) {
+							four_tab[i].children[2].style.backgroundColor = "";
+						}
+						four_tab[swiper.activeIndex].children[2].style.backgroundColor = "orange";
+					
+				}}
+			});
+			var evenMore = document.getElementById('evenMore');
+			$('#clickMore').click(function(){
+				$('#m_line3').toggle(500);
+			});
+		</script>
+	</body>
+
+</html>

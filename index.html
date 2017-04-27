@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/less.css"/>
+    <link rel="stylesheet" type="text/css" href="css/r_weather.css"/>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <script type="text/javascript">
+    
+    	
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			
+   		});
+   		
+    </script>
+</head>
+<body>
+	<div class="top">
+		<img id="top_left" src="img/navigationbar_friendattention@3x.png"/>
+		<div id="text_name">荒芜远</div>
+		<img id="top_right" src="img/navigationbar_icon_radar@3x.png"/>
+		<div id="leida">
+			<div class="sanjiao"></div>
+			<div class="lsd"><img src="img/popover_icon_radar@3x.png"/>雷达</div>
+			<div class="lsd"><img src="img/popover_icon_qrcode@3x.png"/>扫一扫</div>
+			<div class="lsd"><img src="img/popover_icon_didi@3x.png"/>打车</div>
+		</div>
+	</div>
+	<div class="seek">
+		<input type="text" name="" id="seek" value="" placeholder="大家都在搜索：我很帅"/>
+	</div>
+	<div id="section">
+		<div class="img_text">
+			<!--<div class="top_1">
+				<img class="tx" src="img/touxiang.jpg"/>
+				<img class="renzheng" src="img/avatar_vip_golden@3x.png"/>
+				<p class="name">周玥</p>
+				<p class="time">12分钟前</p>
+				<p class="source">来自</p><a class="duan"><a href=\"http://app.weibo.com/t/feed/5mxQl8\" rel=\"nofollow\">QQ音乐</a></a>
+				<img class="down" src="img/message_toolbar_popover_arrow@3x.png">
+			</div>
+			<div class="top_2">今天下午你们在干嘛呢？ ♫我正在收听这首单曲:周玥-拥抱♫http://t.cn/R6mNqU2</div>
+			<div class="top_3">
+				<ul>-->
+					<!--<li class="two"><img src="img/touxiang.jpg"/></li>
+					<li class="two"><img src="img/touxiang.jpg"/></li>
+					<li class="two"><img src="img/touxiang.jpg"/></li>
+					<li class="two"><img src="img/touxiang.jpg"/></li>
+					<li class="two"><img src="img/touxiang.jpg"/></li>
+					<li class="four"><img src="img/touxiang.jpg"/></li>
+					<li class="four"><img src="img/touxiang.jpg"/></li>
+					<li class="four"><img src="img/touxiang.jpg"/></li>
+					<li class="four"><img src="img/touxiang.jpg"/></li>
+				</ul>
+			</div>
+			<!--<div class="top_5">
+				<div class="top_51">
+					<a class="two_name" href="">@aaaaa</a>:今天下午你们在干嘛呢？ ♫我正在收听这首单曲:周玥-拥抱♫http://t.cn/R6mNqU2
+				</div>
+				<ul>
+					<li class="two_1"><img src="img/touxiang.jpg"/></li>
+					<li class="two_1"><img src="img/touxiang.jpg"/></li>
+					<li class="two_1"><img src="img/touxiang.jpg"/></li>
+				</ul>
+				
+			</div>-->
+			<!--<div class="top_4">
+				<div class="forward"><img src="img/more_icon_retweet@3x.png"/>转发</div>
+				<div class="comment"><img src="img/timeline_icon_comment@3x.png"/>评论</div>
+				<div class="nice"><img src="img/nice.png"/>赞</div>
+			</div>-->
+		</div>
+		
+	</div>
+	<div class="bottom">
+		<img id="home_page" src="img/tabbar_home_highlighted@3x.png"/>
+		<p class="home_page">首页</p>
+		<img id="news_page" src="img/tabbar_message_center@3x.png"/>
+		<p class="news">消息</p>
+		<img id="find" src="img/tabbar_discover@3x.png"/>
+		<p class="find">发现</p>
+		<img id="me" src="img/tabbar_profile@3x.png"/>
+		<p class="me">我</p>
+		<div class="add"><img src="img/tabbar_compose_background_icon_add@3x.png" alt="" id="add" /></div>
+	</div>
+	
+	
+		<div id="maximum">
+			<div id="head">
+				<div id="left">
+					<span>07</span>
+					<span>星期五</span>
+					<span>04/2017</span>
+					<span>深圳市</span>
+				</div>
+				<div id="right">
+					<img src="img/more_weibo@3x.png"/>
+				</div>
+			</div>
+			
+			<div class="swiper-container" id="swi">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" id="content1">
+						<div class="icon">
+							<img src="img/tabbar_compose_idea_neo@3x.png"/><br />
+							<span>文字</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_camera@3x.png"/><br />
+							<span>拍摄</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_voice@3x.png"/><br />
+							<span>相册</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_live_neo@3x.png"/><br />
+							<span>直播</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_slideshow_neo@3x.png"/><br />
+							<span>光影秀</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_article_neo@3x.png"/><br />
+							<span>头条文章</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_location_neo@3x.png"/><br />
+							<span>签到</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_comment_neo@3x.png"/><br />
+							<span>点评</span>
+						</div><br />
+					</div>
+					<div class="swiper-slide" id="content2">
+						<div class="icon">
+							<img src="img/tabbar_compose_topic_neo@3x.png"/><br />
+							<span>话题</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_envelope@2x.png"/><br />
+							<span>红包</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_friends_neo@3x.png"/><br />
+							<span>好友圈</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_music_neo@3x.png"/><br />
+							<span>音乐</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_shopping_neo@3x.png"/><br />
+							<span>商品</span>
+						</div>
+						<div class="icon">
+							<img src="img/tabbar_compose_miaopai_neo@3x.png"/><br />
+							<span>秒拍</span>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			
+			
+			<div id="bottom_1">
+				<img id="back" src="img/tabbar_compose_icon_cancel@2x.png"/>
+			</div>
+		</div>
+	<script src="js/index.js"></script>
+	<script src="js/js.js"></script>
+	<script type="text/javascript" src="js/r_weather.js"></script> 
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script src="js/tab.js"></script>
+	<script type="text/javascript">
+		window.addEventListener('load',function(){
+			var m_url = "https://api.weibo.com/2/users/show.json";
+   			getDataByUrl(m_url,{uid:'2264734132'},suc,err);
+		},false);
+		function suc(obj){
+			var text_name = document.getElementById('text_name');
+			text_name.innerText = obj.screen_name;
+		}
+		function err(){
+			
+		}
+	</script>
+</body>
+</html>

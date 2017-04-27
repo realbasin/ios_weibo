@@ -1,0 +1,119 @@
+html {
+  font-size: 20px !important; }
+
+#wrap {
+  width: 37.5rem; }
+
+#search {
+  width: 100%;
+  height: 2.5rem;
+  background-color: whitesmoke;
+  position: relative; }
+
+#search .search_bg {
+  width: 90%;
+  height: 100%;
+  overflow: hidden;
+  background-color: gainsboro; }
+
+#search .search_bg input {
+  width: 95%;
+  height: 1.6rem;
+  display: block;
+  margin: 0.25rem 0.5rem;
+  font-size: 1.2rem;
+  border: none; }
+
+.search_cancel {
+  position: absolute;
+  width: 3rem;
+  height: 2rem;
+  top: 0.25rem;
+  font-size: 1.5rem;
+  right: 0; }
+
+#search_history {
+  width: 35.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+#search_history li {
+  position: relative;
+  list-style: none !important;
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  border-bottom: 1px solid gainsboro; }
+
+#search_history li i {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 2rem; }
+
+#search_history li span {
+  height: 2rem;
+  font-size: 1rem; }
+
+#search_history li .delete {
+  font-weight: bold;
+  position: absolute;
+  right: 1rem; }
+
+.all_history {
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border-bottom: 1px solid grey; }
+
+#hot_search {
+  width: 100%;
+  height: 15rem; }
+  #hot_search #hot_search_title {
+    height: 3rem;
+    line-height: 3rem;
+    display: flex; }
+    #hot_search #hot_search_title i {
+      width: 2rem;
+      height: 2rem;
+      margin: 0.5rem 1rem; }
+    #hot_search #hot_search_title .update {
+      margin: 0 1rem;
+      height: 100%;
+      color: darkgray;
+      font-size: .8rem; }
+    #hot_search #hot_search_title .ads {
+      width: 7rem;
+      height: 2rem;
+      margin: 0.5rem 0 0 10rem;
+      background-color: skyblue; }
+  #hot_search #hot_search_list {
+    width: 100%; }
+    #hot_search #hot_search_list .line {
+      width: 100%;
+      height: 2.5rem;
+      display: flex;
+      border-top: 1px solid gainsboro; }
+      #hot_search #hot_search_list .line li {
+        width: 50%;
+        list-style: none;
+        height: 1.5rem;
+        margin-top: 0.5rem; }
+        #hot_search #hot_search_list .line li span {
+          margin: 0 1rem;
+          vertical-align: middle; }
+        #hot_search #hot_search_list .line li i {
+          display: inline-block;
+          vertical-align: middle;
+          width: 1.5rem;
+          height: 1.5rem; }
+      #hot_search #hot_search_list .line li:nth-child(1) {
+        border-right: 1px solid gainsboro; }
+    #hot_search #hot_search_list #h_line5 {
+      border-bottom: 1px solid gainsboro; }
+    #hot_search #hot_search_list #h_line5 li:nth-child(2) span {
+      color: orange; }
+
+/*# sourceMappingURL=search.css.map */

@@ -1,0 +1,525 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px!important;
+}
+a {
+  text-decoration: none;
+}
+#wrap {
+  width: 100%;
+}
+#c_top {
+  width: 100%;
+}
+#swiper1 {
+  height: 11rem;
+}
+#swiper1 img {
+  width: 100%;
+}
+.none {
+  display: none;
+}
+#flex_ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#flex_ul li {
+  list-style: none;
+  border: none;
+  margin: 0 1% 1% 0;
+  padding: 0;
+}
+#flex_ul li img {
+  width: 100%;
+  height: 20rem;
+}
+.list1 {
+  width: 65%;
+}
+.list2 {
+  width: 35%;
+}
+.list3 {
+  width: 32%;
+}
+#search {
+  width: 100%;
+  height: 4.4rem;
+}
+#search .search_bg {
+  width: 96%;
+  margin-top: .6rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #ededed;
+}
+#search .search_bg input {
+  width: 50%;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  display: block;
+  text-align: center;
+  font-size: 1.6rem;
+  border: none;
+  background-color: #ededed;
+  margin: 0.5rem auto;
+}
+#carousel {
+  width: 100%;
+  height: 18rem;
+}
+#carousel #outer {
+  width: 100%;
+  height: 18rem;
+  font-size: 0;
+  overflow: hidden;
+  margin: 10px auto;
+  position: relative;
+}
+#carousel #inner {
+  width: 225rem;
+}
+#carousel img {
+  width: 100%;
+  height: 4.5rem;
+  display: inline-block;
+}
+#carousel #bar {
+  width: 30%;
+  height: 1rem;
+  /*background-color: black;*/
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+}
+#carousel span {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0 0.5rem;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.fix_tab {
+  position: fixed;
+  top: 0;
+}
+#more {
+  width: 100%;
+  padding: .3rem 0;
+}
+#more #m_line1,
+#more #m_line2,
+#more #m_line3 {
+  width: 100%;
+  display: flex;
+  height: 6.4rem;
+  justify-content: space-around;
+}
+#more #m_line1 li,
+#more #m_line2 li,
+#more #m_line3 li {
+  width: 12%;
+  height: 6.4rem;
+  list-style: none;
+  text-align: center;
+  font-size: 0;
+}
+#more #m_line1 li #evenMore,
+#more #m_line2 li #evenMore,
+#more #m_line3 li #evenMore {
+  transform: rotate(180deg);
+}
+#more #m_line1 li img,
+#more #m_line2 li img,
+#more #m_line3 li img {
+  width: 100%;
+}
+#more #m_line1 li span,
+#more #m_line2 li span,
+#more #m_line3 li span {
+  font-size: 1.2rem;
+}
+#hot {
+  width: 100%;
+  height: 7.2rem;
+  border-bottom: 0.6rem solid #ededed;
+  border-top: 1px solid #ededed;
+}
+#hot #h_line1,
+#hot #h_line2 {
+  width: 100%;
+  height: 3.6rem;
+  border-top: 1px solid #e3e4e6;
+  display: flex;
+}
+#hot #h_line1 li,
+#hot #h_line2 li {
+  width: 50%;
+  height: 3rem;
+  line-height: 2.4rem;
+  list-style: none;
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+}
+#hot #h_line1 li i,
+#hot #h_line2 li i {
+  width: 2rem;
+  height: 2rem;
+  background-color: pink;
+  display: inline-block;
+  vertical-align: middle;
+}
+#hot #h_line1 li span,
+#hot #h_line2 li span {
+  vertical-align: middle;
+  font-size: 1.6rem;
+}
+#hot #h_line1 li:nth-child(1),
+#hot #h_line2 li:nth-child(1) {
+  border-right: 1px solid #EDEDED;
+}
+.turnback {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  left: 2rem;
+  top: 0.3rem;
+  font-size: 6rem;
+  position: absolute;
+}
+#c_bot {
+  width: 100%;
+}
+#c_bot #tab {
+  padding-top: .4rem;
+  position: relative;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+#c_bot #tab li {
+  list-style: none;
+  text-align: center;
+  width: 4rem;
+  height: 2.2rem;
+}
+#c_bot #tab li span {
+  font-size: 1.8rem;
+  color: gray;
+}
+#c_bot #tab li i {
+  display: block;
+  width: 4rem;
+  height: 0.4rem;
+  background-color: transparent;
+  transition: all 500ms;
+}
+.in_mt {
+  margin-top: 50px;
+}
+#swiper2 {
+  margin-top: 14px;
+}
+.weibo {
+  width: 100%;
+}
+.weibo .img_text {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: relative;
+  border-top: 0.2rem solid #EDEDED;
+  border-bottom: 0.2rem solid #EDEDED;
+}
+.weibo .img_text li {
+  list-style: none;
+  display: inline-block;
+}
+.weibo .img_text .top_1 {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 100%;
+}
+.weibo .img_text .top_1 img.tx {
+  border-radius: 50%;
+  width: 9%;
+  border: 1px solid lightgray;
+}
+.weibo .img_text .top_1 img.renzheng {
+  width: 3.7%;
+  position: absolute;
+  top: 5rem;
+  left: 4.4rem;
+}
+.weibo .img_text .top_1 p,
+.weibo .img_text .top_1 a {
+  font-size: 2rem;
+  color: #8B888C;
+}
+.weibo .img_text .top_1 p.time {
+  position: absolute;
+  top: 2.4rem;
+  left: 5rem;
+  font-size: 1.2rem;
+}
+.weibo .img_text .top_1 p.source {
+  position: absolute;
+  top: 2.4rem;
+  left: 11rem;
+  font-size: 1.2rem;
+}
+.weibo .img_text .top_1 p.source a {
+  font-size: 1.2rem;
+}
+.weibo .img_text .top_1 a.duan {
+  font-size: 2rem;
+  color: #8B888C;
+  position: absolute;
+  top: 4rem;
+  left: 24.8rem;
+}
+.weibo .img_text .top_1 p.name {
+  color: orange;
+  font-size: 1.6rem;
+  position: absolute;
+  top: 0px;
+  left: 5rem;
+}
+.weibo .img_text .top_1 img.down {
+  border: none;
+  width: 3%;
+  position: absolute;
+  top: 0px;
+  right: 3rem;
+}
+.weibo .img_text .top_1 .concern_btn {
+  position: absolute;
+  font-size: 1.2rem;
+  right: 6rem;
+  top: .1rem;
+  width: 4.8rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  text-align: center;
+  line-height: 2rem;
+  display: block;
+  border: 1px solid #E3E4E6;
+  color: orangered;
+}
+.weibo .img_text .top_2 {
+  color: black;
+  font-size: 1.6rem;
+  width: 92%;
+  height: 100%;
+  background: transparent;
+  padding-left: 2rem;
+  margin-top: 7rem;
+}
+.weibo .img_text .top_4 {
+  width: 100%;
+  height: 3rem;
+  background: transparent;
+  border-top: 0.02rem solid lightgrey;
+  margin-top: 1.4rem;
+}
+.weibo .img_text .top_4 div {
+  width: 33%;
+  height: 3rem;
+  background: transparent;
+  float: left;
+  border-right: 0.02rem solid lightgrey;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 3rem;
+  vertical-align: middle;
+}
+.weibo .img_text .top_4 div img {
+  width: 15%;
+  vertical-align: middle;
+}
+.weibo .img_text .top_4 .nice {
+  border: none;
+}
+.weibo .img_text .top_3 ul {
+  width: 95%;
+  height: 100%;
+  background: transparent;
+  margin-left: 2.5%;
+  margin-top: 1.4rem;
+}
+.weibo .img_text .top_3 ul li.one {
+  width: 60%;
+  height: 32rem;
+  background: transparent;
+  margin-right: 0.4rem;
+  overflow: hidden;
+}
+.weibo .img_text .top_3 ul li.one img {
+  width: 100%;
+  height: 32rem;
+}
+.weibo .img_text .top_3 ul li.two {
+  width: 32%;
+  height: 12rem;
+  background: transparent;
+  margin-right: 0.4rem;
+  overflow: hidden;
+}
+.weibo .img_text .top_3 ul li.two img {
+  width: 100%;
+  height: 12rem;
+}
+.weibo .img_text .top_3 ul li.four {
+  width: 32%;
+  height: 12rem;
+  background: transparent;
+  margin-right: 0.4rem;
+  overflow: hidden;
+}
+.weibo .img_text .top_3 ul li.four img {
+  width: 100%;
+  height: 12rem;
+}
+.weibo .img_text .top_3 ul li.four:nth-child(2) {
+  margin-right: 4rem;
+}
+.weibo .img_text .top_5 {
+  width: 100%;
+  height: 100%;
+  background: #ededed;
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+}
+.weibo .img_text .top_5 a.two_name {
+  color: #6495ED;
+}
+.weibo .img_text .top_5 .top_51 {
+  color: black;
+  font-size: 3rem;
+  width: 95%;
+  height: 100%;
+  background: transparent;
+  margin-left: 2rem;
+}
+.weibo .img_text .top_5 ul {
+  width: 95%;
+  height: 100%;
+  background: transparent;
+  margin-left: 2.5%;
+  margin-top: 1.4rem;
+}
+.weibo .img_text .top_5 ul li.one_1 {
+  width: 60%;
+  height: 52rem;
+  background: transparent;
+  margin-right: 0.4rem;
+  overflow: hidden;
+}
+.weibo .img_text .top_5 ul li.one_1 img {
+  width: 100%;
+  height: 52rem;
+}
+.weibo .img_text .top_5 ul li.two_1 {
+  width: 32%;
+  height: 24rem;
+  background: transparent;
+  margin-right: 0.4rem;
+  overflow: hidden;
+}
+.weibo .img_text .top_5 ul li.two_1 img {
+  width: 100%;
+  height: 24rem;
+}
+.weibo .img_text .top_5 ul li.four_1 {
+  width: 32%;
+  height: 24rem;
+  background: transparent;
+  margin-right: 0.4rem;
+  overflow: hidden;
+}
+.weibo .img_text .top_5 ul li.four_1 img {
+  width: 100%;
+  height: 24rem;
+}
+.weibo .img_text .top_5 ul li.four_1:nth-child(2) {
+  margin-right: 4rem;
+}
+.bottom {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 4.5rem;
+  background: #fcf9fc;
+  z-index: 555;
+}
+.bottom img {
+  width: 8%;
+  margin-top: 0.7rem;
+}
+.bottom p {
+  font-size: 1rem;
+}
+.bottom .home_page {
+  position: absolute;
+  bottom: 0.3rem;
+  left: 2.2rem;
+}
+.bottom .me {
+  position: absolute;
+  bottom: 0.3rem;
+  right: 2.6rem;
+}
+.bottom .news {
+  position: absolute;
+  bottom: 0.3rem;
+  left: 9rem;
+}
+.bottom .find {
+  position: absolute;
+  bottom: 0.3rem;
+  right: 9rem;
+}
+.bottom #home_page {
+  position: absolute;
+  top: -0.5rem;
+  left: 1.7rem;
+}
+.bottom #news_page {
+  position: absolute;
+  top: -0.5rem;
+  left: 8.5rem;
+}
+.bottom #find {
+  position: absolute;
+  top: -0.5rem;
+  right: 8.5rem;
+}
+.bottom #me {
+  position: absolute;
+  top: -0.5rem;
+  right: 1.7rem;
+}
+.bottom .add {
+  width: 10%;
+  margin: 0 auto;
+  margin-top: -0.4rem;
+}
+.bottom .add #add {
+  width: 100%;
+  border-radius: 0.3rem;
+}

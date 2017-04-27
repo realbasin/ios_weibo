@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/wb_text.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div class="bar">
+				<button onclick='goback()' ><发现</button>
+				<span>微博正文</span>
+				<span id='extra'>•••</span>
+			</div>
+			<div class="weibo" id='weibo'>
+				<!--<div class="wb_top">
+					<i class="portrait"></i>
+					<h3 class='user_name'>xiaoMing</h3>
+					<h5 class="create_time">5min ago</h5>
+					<h5 class="create_origin">来自iphone6s</h5>
+					<span class="collect_btn">☆</span>
+				</div>
+				<div class="wb_text">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis reiciendis iste magni corporis fugiat aut soluta odit ullam quam molestiae ea repellat facilis. Excepturi quas libero modi harum maiores animi.
+				</div>
+				<div class="interract">
+					<div class="interract_bar">
+						<li class="trans_num">
+							<span>转发0</span>
+						</li>
+						<li class="commment_num">
+							<span>评论0</span>
+						</li>
+						<li class="like_num">
+							<span>赞4</span>
+						</li>
+					</div>
+					    切换转发评论点赞   
+					<div class="com_text">
+						<div class="trans_ui">
+							<li>
+								<div class="user">
+									<i class="each_portrait"></i>
+								</div>
+								<div class="trans_cont">
+									<span class="each_username">下雨天没有jj</span>
+									<span class="each_time">4-7 10:02</span>
+									<p>转发微博</p>
+								</div>
+							</li>
+						</div>
+						<div class="comments_ui">
+							<li>
+								<div class="user">
+									<i class="each_portrait"></i>
+								</div>
+								<div class="trans_cont">
+									<span class="each_username">下雨天没有jj</span>
+									<span class="each_time">4-7 10:02</span>
+									<p>春天在哪里呀我在马路边捡到一分钱</p>
+									<div>-----等人 共264条回复</div>
+								</div>
+							</li>
+						</div>
+						<div class="like_ui">
+							<li>
+								<i class="each_portrait"></i>
+								<span class="each_username">下雨天没有jj</span>
+							</li>
+						</div>
+					</div>
+				</div>
+				<div class="user_fix_btn">
+					<li>
+						<i></i>
+						<span>转发</span>
+					</li>
+					<li>
+						<i></i>
+						<span>评论</span>
+					</li>
+					<li>
+						<i></i>
+						<span>赞</span>
+					</li>
+			props:['portrait','username','createtime','origin','content','transnum','comsnum','likenum'],
+					
+				</div>-->
+				<!--<wb v-for="(value,key) in wb_datas"  v-if='key=='portrait''>{{value}} {{key}}</wb>-->
+			</div>
+
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/js.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function goback(){
+				var ws=plus.webview.currentWebview();
+				plus.webview.close(ws);
+			}
+			addEventListener('load', function() {
+				var obj = location.search.split('?')[1];
+				var objId = obj.split('=')[1];
+				var target = JSON.parse(plus.storage.getItem('item'));
+//				wb_model.wb_datas.push(target);
+//				wb_model.pic_urls.push(target.pic_urls);
+				getDataByUrl('https://api.weibo.com/2/comments/show.json',{"id":objId},getComment,com_err,'comments');
+				
+				create_wb(target,objId);
+				
+				
+				var scale = 1 / devicePixelRatio;
+				document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale +
+					', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+			}, false);
+
+			function create_wb(obj,wb_id) {
+				var wb_obj =obj;
+//				var each_wb = document.createElement('li');
+				var wb_top = document.createElement("div");
+				wb_top.className = 'wb_top';
+				//头像
+				var portrait = document.createElement("i");
+				portrait.className = 'portrait';
+//				portrait.style.background = 'url(' + wb_obj.user.profile_image_url + ') no-repeat ';
+				var p_img=document.createElement("img");
+				p_img.src=wb_obj.user.profile_image_url;
+				portrait.appendChild(p_img);
+				wb_top.appendChild(portrait);
+				//用户名
+				var userName = document.createElement("h3");
+				userName.className = 'user_name';
+				userName.innerText = wb_obj.user.screen_name;
+				wb_top.appendChild(userName);
+				//时间
+				var create_time = document.createElement("h5");
+				create_time.className = 'create_time';
+				var date1 = new Date();
+				var date2 = new Date(wb_obj.created_at);
+				var s1 = date1.getTime() - date2.getTime();
+				var leave1 = s1 % (24 * 3600 * 1000);
+				var leave2 = leave1 % (3600 * 1000);
+				var minutes = Math.floor(leave2 / (60 * 1000));
+				if(minutes == 0) {
+					create_time.innerText = "1" + '分钟前';
+
+				} else {
+					create_time.innerText = minutes + '分钟前';
+				}
+				wb_top.appendChild(create_time);
+
+				//来源
+				var create_origin = document.createElement("h5");
+				create_origin.className = 'create_origin';
+				if(wb_obj.source) {
+					var tarSource = wb_obj.source.split('>')[1].split('<')[0];
+					create_origin.innerText = "来自" + tarSource;
+				} else {
+					create_origin.innerText = "来自微博 weibo.com";
+				}
+				wb_top.appendChild(create_origin);
+				//关注按钮
+				var concern_btn = document.createElement("span");
+				concern_btn.className = 'concern_btn';
+				concern_btn.innerText = '+关注';
+				wb_top.appendChild(concern_btn);
+				//删除选项
+				var delete_btn = document.createElement("img");
+				delete_btn.className = 'delete_btn';
+				delete_btn.src = 'url(img/livescreen_popup_close@3x.png)';
+				wb_top.appendChild(delete_btn);
+
+				//正文部分
+				var wb_text = document.createElement("div");
+				wb_text.className = 'wb_text';
+				wb_text.innerText = wb_obj.text;
+				if(wb_obj.pic_urls.length > 0) {
+					var imgList = wb_obj.pic_urls;
+					var list_container = document.createElement("ul");
+					list_container.id = 'flex_ul';
+					for(var c = 0; c < imgList.length; c++) {
+						var li = document.createElement("li");
+						var pic = document.createElement("img");
+						pic.src = imgList[c].thumbnail_pic;   
+
+						switch(imgList.length) {
+							case 1:
+								li.className = 'list1';
+								break;
+							case 2:
+							case 4:
+								li.className = 'list2';
+								break;
+							default:
+								li.className = 'list3';
+						}
+
+						li.appendChild(pic);
+						list_container.appendChild(li);
+					}
+					wb_text.appendChild(list_container);
+				}
+				var interract = document.createElement("div");
+				interract.className = 'interract';
+				var interract_bar = document.createElement("div");
+				interract_bar.className = 'interract_bar';
+				var trans_num = document.createElement("li");
+				trans_num.className = 'trans_num';
+				var span1 = document.createElement("span");
+				span1.innerText = '转发  ' + wb_obj.reposts_count || 0;
+				trans_num.appendChild(span1);
+				var comment_num = document.createElement("li");
+				comment_num.className = 'comment-num';
+				var span2 = document.createElement("span");
+				span2.innerText = '评论  ' + wb_obj.comments_count;
+				comment_num.appendChild(span2);
+				var like_num = document.createElement("li");
+				like_num.className = 'like_num';
+				var span3 = document.createElement("span");
+				span3.innerText = '点赞  ' + wb_obj.attitudes_count;
+				like_num.appendChild(span3);
+				interract_bar.appendChild(trans_num);
+				interract_bar.appendChild(comment_num);
+				interract_bar.appendChild(like_num);
+				interract.appendChild(interract_bar);
+				var wb=document.querySelector('.weibo');
+				wb.appendChild(wb_top);
+				wb.appendChild(wb_text);
+				wb.appendChild(interract); 
+				//互动的主体
+				var com_text=document.createElement("div");
+				wb.appendChild(com_text);
+				com_text.className='com_text';
+				//评论界面
+				var comments_ui=document.createElement("div");
+				comments_ui.className='comments_ui';
+				comments_ui.id='comments';
+				com_text.appendChild(comments_ui);
+				interract.appendChild(com_text);
+				var fix_bar=document.createElement("div");
+				fix_bar.className='user_fix_btn';
+				
+				var li1=document.createElement("li");
+				var i1=document.createElement("i");
+				i1.style.background='url(img/artical_detail_icon_repost@2x.png)';
+				var span1=document.createElement("span");
+				span1.innerText='转发';
+				li1.appendChild(i1);
+				li1.appendChild(span1);
+				
+				var li2=document.createElement("li");
+				var i2=document.createElement("i");
+				i2.style.background='url(img/artical_detail_icon_comment@2x.png)';
+				var span2=document.createElement("span");
+				span2.innerText='评论';
+				li2.appendChild(i2);
+				li2.appendChild(span2);
+				
+				var li3=document.createElement("li");
+				var i3=document.createElement("i");
+				i3.style.background='url(img/artical_detail_icon_like@2x.png)';
+				var span3=document.createElement("span");
+				span3.innerText='赞';
+				li3.appendChild(i3);
+				li3.appendChild(span3);
+				fix_bar.appendChild(li1);
+				fix_bar.appendChild(li2);
+				fix_bar.appendChild(li3);
+								 
+				wb.appendChild(fix_bar);
+				getDataByUrl('https://api.weibo.com/2/comments/show.json',{"id":wb_id},getComment,com_err,'comments');
+
+			}
+			function getComment(data,pId){
+				for(var i in data.comments){
+					var com_li=document.createElement("li");
+					com_li.style='listStyle:none';
+					
+					var com_user=document.createElement("div");
+					com_user.className='user';
+					var com_user_head=document.createElement("i");
+					com_user_head.className=' each_portrait';
+					com_user_head.style.background='url('+data.comments[i].user.avatar_large+')';
+					com_user.appendChild(com_user_head);
+					
+					var coms_out=document.createElement('div');
+					coms_out.className=' trans_cont';
+					var each_username=document.createElement('span');
+					each_username.className='each_username';
+					each_username.innerText=data.comments[i].user.name;
+					var each_time=document.createElement('span');
+					each_time.className='each_time';
+					each_time.innerText=data.comments[i].created_at;
+					var each_comments=document.createElement('p');
+					each_comments.innerText=data.comments[i].text;
+					coms_out.appendChild(each_username); 
+					coms_out.appendChild(each_time);
+					coms_out.appendChild(each_comments);
+					com_li.appendChild(com_user);
+					com_li.appendChild(coms_out);
+					var com_ui=document.getElementById(pId);
+					com_ui.appendChild(com_li);
+				}
+				
+			}
+			function com_err(error){
+				console.log("失败"+error);
+			}
+			$('#extra').click(function(){
+				ws=plus.webview.currentWebview();
+				ws.addEventListener("maskClick",function(){
+					wc.close("auto");
+				},false);
+				ws.setStyle({mask:"rgba(0,0,0,0.5)"})
+				wc=plus.webview.open('share_mask.html',"slide-in-bottom",{top:'60%',height:'40%',popGesture:"none"});
+//				wc=plus.webview.currentWebview();
+				wc.addEventListener('close',function(){
+					ws.setStyle({mask:"none"});
+					wc=null;
+				},false);
+			})
+		</script>
+	</body>
+
+</html>

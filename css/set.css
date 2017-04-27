@@ -1,0 +1,137 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+html,body{
+	background-color: #f1f1f1;
+}
+
+#set_header{
+	width: 100%;
+	height: 44px;
+	background-color: white;
+	border-bottom: 1px #D1D1D1 solid;
+	font-size: 0;
+}	
+
+#set_header .nav{
+	display: inline-block;
+	height: 45px;
+	line-height: 45px;
+	width: 33%;
+	font-size: 18px;
+}
+#set_header>span:nth-child(1) span{
+	margin-left: 20px;
+}
+#set_header>span:nth-child(2){
+	text-align: center;
+}
+
+#set_header>span:nth-child(1)>span{
+	display: inline-block;
+	margin-left: 10px;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	background-size:30px 30px;
+	background-repeat: no-repeat;
+	background-image: url(../img/navigationbar_back@3x.png);
+	
+}
+#set_header>span:nth-child(1)>span:active{
+	background-image: url(../img/navigationbar_back_highlighted@3x.png);
+}
+#set_header .nav img{
+	width: 12px;
+	height: 8px;
+}
+.set{
+	width: 100%;
+	height: 135px;
+	background-color: white;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.tab{
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	border-bottom: 1px #F1F1F1 solid;
+}
+.set>div:active{
+	background-color: #F1F1F1;
+}
+.text{
+	height: 35px;
+	line-height: 35px;
+	margin-left: 10px;
+	font-size: 15px;
+}
+.set>div>img{
+	width: 18px;
+	height: 12px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 18px;
+}
+.set>div>span{
+	font-size: 18px;
+	margin-left: 10px;
+}
+.all{
+	width: 94%;
+	margin: auto;
+	display: none;
+}
+.explain{
+	margin-top: 20px;
+	font-size: 15px;
+}
+.example{
+	height: 60px;
+	background-color: white;
+	margin-top: 10px;
+	position: relative;
+}
+.example img{
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+.example span{
+	height: 60px;
+	line-height: 60px;
+	vertical-align: middle;
+}
+.example div{
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	border-radius: 50%;
+	background-size: 18px 18px;
+	font-size: 12px;
+	position: absolute;
+	top: 22px;
+	right: 10px;
+	background-image: url(../img/videotimeline_comment_badge@3x.png);
+	background-repeat: no-repeat;
+	
+}
+.example img:nth-of-type(2){
+	width: 5px;
+	height: 5px;
+	position: absolute;
+	top: 28px;
+	right: 0px;
+}
+.check{
+	display: none;
+}
+.active{
+	display: block;
+}

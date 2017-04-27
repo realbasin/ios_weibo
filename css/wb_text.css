@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 20px !important;
+  height: 100%; }
+
+body {
+  width: 37.5rem; }
+
+li {
+  list-style: none; }
+
+.bar {
+  width: 100%;
+  height: 44px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  padding-bottom: 5px; }
+  .bar button {
+    border: none;
+    background-color: #fff;
+    font-size: 32px;
+    padding: 5px 20px;
+    vertical-align: middle; }
+  .bar span:nth-of-type(1) {
+    margin-left: 25%;
+    vertical-align: middle;
+    font-size: 32px; }
+  .bar span:nth-of-type(2) {
+    margin-left: 30%;
+    vertical-align: middle;
+    font-size: 40px; }
+  .bar span:nth-of-type(2):hover {
+    color: orange; }
+
+#flex_ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+
+#flex_ul li {
+  margin: 0 1% 1% 0;
+  padding: 0;
+  border: none; }
+
+#flex_ul img {
+  width: 100%;
+  height: 12rem;
+  background-size: cover;
+  /*display: block;*/ }
+
+.list1 {
+  width: 65%; }
+
+.list2 {
+  width: 33%; }
+
+.list3 {
+  width: 30%; }
+
+.fill_img {
+  width: 100%;
+  height: 100%;
+  background-size: contain; }
+
+.weibo {
+  width: 37.5rem;
+  margin-top: 49px; }
+  .weibo .wb_top {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    overflow: hidden; }
+    .weibo .wb_top .portrait {
+      display: inline-block;
+      position: absolute;
+      left: 1rem;
+      width: 4rem;
+      height: 4rem; }
+      .weibo .wb_top .portrait img {
+        width: 100%; }
+    .weibo .wb_top .user_name {
+      font-size: 30px;
+      position: absolute;
+      left: 5rem;
+      color: darkorange; }
+    .weibo .wb_top .create_time {
+      font-size: 20px;
+      width: 4rem;
+      padding: 10px;
+      position: absolute;
+      left: 5rem;
+      top: 1.5rem; }
+    .weibo .wb_top .create_origin {
+      font-size: 20px;
+      position: absolute;
+      padding: 10px;
+      left: 10rem;
+      top: 1.5rem; }
+    .weibo .wb_top .concern_btn {
+      text-align: center;
+      font-size: 32px;
+      position: absolute;
+      right: 0rem;
+      width: 6rem;
+      height: 3rem;
+      line-height: 3rem;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      color: orangered;
+      background-color: #DCDCDC; }
+  .weibo .wb_text {
+    line-height: 38px;
+    font-size: 28px;
+    padding-left: 1rem;
+    padding-bottom: 1rem; }
+  .weibo .interract {
+    width: 100%; }
+    .weibo .interract .interract_bar {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%; }
+      .weibo .interract .interract_bar li {
+        list-style: none;
+        width: 15%;
+        margin: 0.5rem;
+        font-size: 30px; }
+      .weibo .interract .interract_bar .like_num {
+        margin-left: 43%; }
+    .weibo .interract .com_text {
+      width: 100%;
+      padding-bottom: 2rem; }
+      .weibo .interract .com_text .trans_ui, .weibo .interract .com_text .comments_ui {
+        width: 100%; }
+        .weibo .interract .com_text .trans_ui li, .weibo .interract .com_text .comments_ui li {
+          width: 98%;
+          list-style: none;
+          display: flex; }
+          .weibo .interract .com_text .trans_ui li .user, .weibo .interract .com_text .comments_ui li .user {
+            width: 10%;
+            overflow: hidden; }
+            .weibo .interract .com_text .trans_ui li .user .each_portrait, .weibo .interract .com_text .comments_ui li .user .each_portrait {
+              display: inline-block;
+              width: 2rem;
+              height: 2rem;
+              margin: 0.6rem; }
+          .weibo .interract .com_text .trans_ui li .trans_cont, .weibo .interract .com_text .comments_ui li .trans_cont {
+            width: 90%;
+            position: relative;
+            line-height: 1.2rem; }
+            .weibo .interract .com_text .trans_ui li .trans_cont .each_username, .weibo .interract .com_text .comments_ui li .trans_cont .each_username {
+              position: absolute;
+              top: .5rem;
+              font-size: 24px; }
+            .weibo .interract .com_text .trans_ui li .trans_cont .each_time, .weibo .interract .com_text .comments_ui li .trans_cont .each_time {
+              position: absolute;
+              top: 1.5rem;
+              font-size: .6rem;
+              color: darkgray; }
+            .weibo .interract .com_text .trans_ui li .trans_cont p, .weibo .interract .com_text .comments_ui li .trans_cont p {
+              margin-top: 2.3rem;
+              font-size: 20px;
+              padding: .5rem 0; }
+            .weibo .interract .com_text .trans_ui li .trans_cont div, .weibo .interract .com_text .comments_ui li .trans_cont div {
+              font-size: 20px;
+              width: 100%;
+              background-color: darkgrey;
+              color: cornflowerblue;
+              margin: .5rem 0; }
+      .weibo .interract .com_text .like_ui li {
+        width: 94%;
+        padding-left: 4%;
+        height: 1.5rem;
+        list-style: none;
+        line-height: 1.5rem;
+        font-size: 0; }
+        .weibo .interract .com_text .like_ui li .each_portrait {
+          display: inline-block;
+          width: 1rem;
+          height: 1rem;
+          vertical-align: middle;
+          background-color: black; }
+        .weibo .interract .com_text .like_ui li .each_username {
+          vertical-align: middle;
+          margin-left: .5rem;
+          font-size: 24px; }
+  .weibo .user_fix_btn {
+    display: flex;
+    width: 37.5rem;
+    position: fixed;
+    bottom: 0;
+    background-color: grey; }
+    .weibo .user_fix_btn li {
+      margin: 1rem 0;
+      width: 33.33%;
+      list-style: none;
+      border-right: 1px solid gainsboro;
+      font-size: 0;
+      text-align: center; }
+      .weibo .user_fix_btn li i {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-right: .5rem;
+        background-color: skyblue;
+        vertical-align: middle; }
+      .weibo .user_fix_btn li span {
+        font-size: 32px;
+        vertical-align: middle;
+        color: darkgray; }
+    .weibo .user_fix_btn li:nth-child(3) {
+      border: none; }
+
+.delete_btn {
+  font-size: 24px;
+  text-align: center; }
+
+/*# sourceMappingURL=wb_text.css.map */

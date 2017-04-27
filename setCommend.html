@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <script src="../js/js.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			html,body{
+				background-color: #f1f1f1;
+			}
+			
+			#set_header{
+				width: 100%;
+				height: 44px;
+				background-color: white;
+				border-bottom: 1px #D1D1D1 solid;
+				font-size: 0;
+			}	
+			#set_header .nav{
+				display: inline-block;
+				height: 45px;
+				line-height: 45px;
+				width: 33%;
+				font-size: 18px;
+			}
+			#set_header>span:nth-child(1) span{
+				margin-left: 20px;
+			}
+			#set_header>span:nth-child(2){
+				text-align: center;
+			}
+			
+			#set_header>span:nth-child(1)>span{
+				display: inline-block;
+				margin-left: 10px;
+				width: 30px;
+				height: 30px;
+				vertical-align: middle;
+				background-size:30px 30px;
+				background-repeat: no-repeat;
+				background-image: url(../img/navigationbar_back@3x.png);
+				
+			}
+			#set_header>span:nth-child(1)>span:active{
+				background-image: url(../img/navigationbar_back_highlighted@3x.png);
+			}
+			#set_header .nav img{
+				width: 12px;
+				height: 8px;
+			}
+			.participation{
+				height: 44px;
+				line-height: 44px;
+				background-color: white;
+				margin-top: 20px;
+			}
+			.participation>span{
+				font-size: 18px;
+				margin-left: 10px;
+			}
+			.text2{
+				font-size: 12px;
+				color: #333333;
+				margin-top: 5px;
+				padding-left: 10px;
+			}
+			.on-off{
+				width: 45px;
+				height: 25px;
+				border: 1px #A5A5A5 solid;
+				border-radius: 25px;
+				float: right;
+				margin-right: 20px;
+				margin-top: 10px;
+				position: relative;
+				background-color: limegreen;
+			}
+			.circle{
+				width: 25px;
+				height: 25px;
+				border: 1px #a5a5a5 solid;
+				border-radius: 50%;
+				position: absolute;
+				top: -1px;
+				left: 19px;
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="set">
+			<div id="set_header">
+				<span class="nav" ><span onclick="back()"></span></span>
+				<span class="nav"><span>设置</span></span>
+			</div>
+			<div id="main">
+				<div class="participation">
+					<span>导航栏未读数</span>
+					<div class="on-off"><span class="circle"></span></div>
+				</div>
+				<div class="text2">关闭后，将不在底部“消息”切换按钮显示未读数消息</div>
+				<div class="participation">
+					<span>我参与的</span>
+					<div class="on-off"><span class="circle"></span></div>
+				</div>
+				<div class="text2">开启后，当我转评赞了一条微博，我将收到与我相关的评论</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function back(){
+				plus.webview.close("setCommend.html","pop-out",200)
+			}
+			
+			var onOff = document.getElementsByClassName("on-off")[0];
+			var onOff1 = document.getElementsByClassName("on-off")[1];
+			var circle = document.getElementsByClassName("circle")[0];
+			var circle1 = document.getElementsByClassName("circle")[1];
+			var flag = true;
+			onOff.addEventListener("click",function(){
+				if(flag==true){
+					circle.style.left = "0px";
+					onOff.style.backgroundColor = "white";
+					flag = false;
+				}else{
+					circle.style.left = "19px";
+					onOff.style.backgroundColor = "limegreen";
+					flag = true;
+				}
+			},false);
+			onOff1.addEventListener("click",function(){
+				if(flag==true){
+					circle1.style.left = "0px";
+					onOff1.style.backgroundColor = "white";
+					flag = false;
+				}else{
+					circle1.style.left = "19px";
+					onOff1.style.backgroundColor = "limegreen";
+					flag = true;
+				}
+			},false);
+		</script>
+	</body>
+</html>

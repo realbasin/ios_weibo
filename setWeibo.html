@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <link rel="stylesheet" type="text/css" href="css/set.css"/>
+	    <script src="js/js.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>	
+		<title></title>
+	</head>
+	<body>
+		<div id="set">
+			<div id="set_header">
+				<span class="nav" ><span onclick="back()"></span></span>
+				<span class="nav"><span>设置</span></span>
+			</div>
+		</div>
+		<div id="main">
+			<div class="text">
+				我将收到这些人的@通知
+			</div>
+			<div class="set">
+				<div class="tab">
+					<span>所有人</span><img class="check active" src="img/common_icon_checkmark@2x.png" />
+				</div>
+				<div class="tab">
+					<span>我关注的人</span><img class="check" src="img/common_icon_checkmark@2x.png"/>
+				</div>
+				<div class="tab">
+					<span>关闭</span><img class="check" src="img/common_icon_checkmark@2x.png"/>
+				</div>
+			</div>
+			<div class="all active">
+				<div class="explain">所有的人@我时，都将在消息箱首页进行数字提醒，并在应用外推送通知</div>
+				<div class="example">
+					<img src="img/messagescenter_at@3x.png"/><span>@我的</span><div style="color: white;">9</div>
+				</div>
+			</div>
+			<div class="all">
+				<div class="explain">我关注的人@我时，将在消息箱首页进行数字提醒，并在应用外推送通知</div>
+				<div class="example">
+					<img src="img/messagescenter_at@3x.png"/><span>@我的</span><div style="color: white;">9</div>
+				</div>
+				<div class="explain">未关注的人@我时，将仅进行红点标记</div>
+				<div class="example">
+					<img src="img/messagescenter_at@3x.png"/><span>@我的</span><img src="img/videotimeline_comment_badge@3x.png" />
+				</div>
+			</div>
+			<div class="all">
+				<div class="explain">所有的人@我时，都将仅进行红点标记</div>
+				<div class="example">
+					<img src="img/messagescenter_at@3x.png"/><span>@我的</span><img src="img/videotimeline_comment_badge@3x.png" />
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			function back(){
+				plus.webview.close("setWeibo.html","pop-out",200)
+			}
+			
+			var tab = document.getElementsByClassName("tab");
+			var all = document.getElementsByClassName("all");
+			var check = document.getElementsByClassName("check");
+			
+			for(var i = 0;i<tab.length;i++){
+				tab[i].index = i;
+				tab[i].addEventListener("click",function(){
+					for(var j =0;j<all.length;j++){
+						all[j].className = "all";
+					}
+					for(var z =0;z<check.length;z++){
+						check[z].className = "check";
+					}
+					all[this.index].className = "all active";
+					check[this.index].className = "check active";
+				},false);
+			};
+		</script>
+	</body>
+</html>

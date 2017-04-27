@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/search.css"/>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="search">
+				<div class="search_bg">
+					<input type="text" placeholder="大家正在搜：bala" />
+					<!--<input type="button" value="搜索" id='search_btn'/>-->
+				</div>
+				<span class="search_cancel">取消</span>
+			</div>
+			<div id="search_history">
+				<li>
+					<i></i>
+					<span>Lorem ipsum ur adipisicing elit. Dolor commodi!</span>
+					<span class="delete">x</span>
+				</li>
+				<div class="all_history">
+					全部搜索记录
+				</div>
+			</div>
+			<div id="hot_search">
+				<div id="hot_search_title">
+					<i></i>
+					<span>微博热搜榜</span>
+					<span class="update">每分钟更新一次</span>
+					<div class="ads"></div>
+				</div>
+				<div id="hot_search_list">
+					<div  class="line" id="h_line1">
+						<li>
+							<span>xxxxx</span>
+							<i></i>
+						</li>
+						<li>
+							<span></span>
+							<i></i>
+						</li>
+					</div>
+					<div id="h_line2" class="line">
+						<li>
+							<span></span>
+							<i></i>
+						</li>
+						<li>
+							<span></span>
+							<i></i>
+						</li>
+					</div>
+					<div id="h_line3" class="line">
+						<li>
+							<span></span>
+							<i></i>
+						</li>
+						<li>
+							<span></span>
+							<i></i>
+						</li>
+					</div>
+					<div id="h_line4" class="line">
+						<li>
+							<span></span>
+							<i></i>
+						</li>
+						<li>
+							<span></span>
+							<i></i>
+						</li>
+					</div>
+					<div id="h_line5" class="line">
+						<li>
+							<span></span>
+							<i></i>
+						</li>
+						<li>
+							<span>更多热搜       ></span>
+						</li>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/js.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var scale = 1 / devicePixelRatio;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale +
+			', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+//		
+//	$('.search_bg>input').keydown(function(e){
+////				plus.webview.open('author.html','_self');
+//		console.log(JSON.stringify(e.which));
+//		if(e.which == 13){
+//			console.log("点击了搜索（换行）键");
+//			var searchValue=document.querySelector('.search_bg').querySelectorAll('input')[0].value;
+//			var search_url='https://api.weibo.com/2/search/topics.json';
+//			$('#search_history').toggle();
+//			$('#hot_search').remove();
+//			console.log(searchValue);
+//			getDataByUrl(search_url,{
+//				q:searchValue,
+//			},suc,err,'wrap');
+//		}
+//	});
+	$('.search_cancel').click(function(){
+		console.log('back!!');
+		var ws=plus.webview.currentWebview();
+		plus.webview.close(ws);
+	})
+	</script>
+</html>

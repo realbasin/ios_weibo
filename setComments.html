@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <link rel="stylesheet" type="text/css" href="css/set.css"/>
+	    <script src="js/js.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>	
+		<title></title>
+		<style type="text/css">
+			.participation{
+				height: 44px;
+				line-height: 44px;
+				background-color: white;
+				margin-top: 20px;
+			}
+			.participation>span{
+				font-size: 18px;
+				margin-left: 10px;
+			}
+			.text2{
+				font-size: 12px;
+				margin-top: 20px;
+				color: #333333;
+				padding-left: 10px;
+			}
+			.on-off{
+				width: 45px;
+				height: 25px;
+				border: 1px #A5A5A5 solid;
+				border-radius: 25px;
+				float: right;
+				margin-right: 20px;
+				margin-top: 10px;
+				position: relative;
+				background-color: limegreen;
+			}
+			.circle{
+				width: 25px;
+				height: 25px;
+				border: 1px #a5a5a5 solid;
+				border-radius: 50%;
+				position: absolute;
+				top: -1px;
+				left: 19px;
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="set">
+			<div id="set_header">
+				<span class="nav" ><span onclick="back()"></span></span>
+				<span class="nav"><span>设置</span></span>
+			</div>
+		</div>
+		<div id="main">
+			<div class="text">
+				通知提醒
+			</div>
+			<div class="set">
+				<div class="tab">
+					<span>所有人</span><img class="check active" src="img/common_icon_checkmark@2x.png" />
+				</div>
+				<div class="tab">
+					<span>我关注的人</span><img class="check" src="img/common_icon_checkmark@2x.png"/>
+				</div>
+				<div class="tab">
+					<span>关闭</span><img class="check" src="img/common_icon_checkmark@2x.png"/>
+				</div>
+			</div>
+			<div class="all active">
+				<div class="explain">所有的人评论我时，都将在消息箱首页进行数字提醒，并在应用外推送通知</div>
+				<div class="example">
+					<img src="img/messagescenter_comments@3x.png"/><span>评论</span><div style="color: white;">9</div>
+				</div>
+			</div>
+			<div class="all">
+				<div class="explain">我关注的人评论我时，将在消息箱首页进行数字提醒，并在应用外推送通知</div>
+				<div class="example">
+					<img src="img/messagescenter_comments@3x.png"/><span>评论</span><div style="color: white;">9</div>
+				</div>
+				<div class="explain">未关注的人评论我时，将仅进行红点标记</div>
+				<div class="example">
+					<img src="img/messagescenter_comments@3x.png"/><span>评论</span><img src="img/videotimeline_comment_badge@3x.png" />
+				</div>
+			</div>
+			<div class="all">
+				<div class="explain">所有的人评论我时，都将仅进行红点标记</div>
+				<div class="example">
+					<img src="img/messagescenter_comments@3x.png"/><span>评论</span><img src="img/videotimeline_comment_badge@3x.png" />
+				</div>
+			</div>
+			<div class="participation">
+				<span>我参与的</span>
+				<div class="on-off"><span class="circle"></span></div>
+			</div>
+			<div class="text2">开启后，当我转评赞了一条微博，我将收到与我相关的评论</div>
+		</div>
+		
+		<script type="text/javascript">
+			function back(){
+				plus.webview.close("setComments.html","pop-out",200)
+			}
+			
+			var tab = document.getElementsByClassName("tab");
+			var all = document.getElementsByClassName("all");
+			var check = document.getElementsByClassName("check");
+			var onOff = document.getElementsByClassName("on-off")[0];
+			var circle = document.getElementsByClassName("circle")[0];
+			var flag = true;
+			for(var i = 0;i<tab.length;i++){
+				tab[i].index = i;
+				tab[i].addEventListener("click",function(){
+					for(var j =0;j<all.length;j++){
+						all[j].className = "all";
+					}
+					for(var z =0;z<check.length;z++){
+						check[z].className = "check";
+					}
+					all[this.index].className = "all active";
+					check[this.index].className = "check active";
+				},false);
+			};
+			
+			onOff.addEventListener("click",function(){
+				if(flag==true){
+					circle.style.left = "0px";
+					onOff.style.backgroundColor = "white";
+					flag = false;
+				}else{
+					circle.style.left = "19px";
+					onOff.style.backgroundColor = "limegreen";
+					flag = true;
+				}
+			},false);
+		</script>
+	</body>
+</html>
+
